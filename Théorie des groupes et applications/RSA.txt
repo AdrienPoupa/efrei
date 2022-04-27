@@ -1,0 +1,15 @@
+On a e*d mod ((p-1)(q-1)) = 1
+soit
+7*d mod ((877-1)(881-1)) = 1
+
+Or 7*440503 mod ((877-1)(881-1)) = 1 convient
+
+=> d = 440503
+
+decryptage : 9669
+
+Déchiffrage = c^d mod n
+			= (376860^440503) % (877*881)
+			= 9669
+
+http://www.dcode.fr/calcul-exponentiation-modulaire

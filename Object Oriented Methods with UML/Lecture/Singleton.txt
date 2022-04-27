@@ -1,0 +1,46 @@
+//Singleton  Implementation:
+
+
+
+ #include <iostream>
+using namespace std;
+class Singletondemo
+{private:
+    static bool flag;
+    static Singletondemo *single;
+    Singletondemo()
+    {
+        //private constructor
+    }
+   public:
+    static Singletondemo* getInstance();
+    void method();
+    ~Singletondemo()
+    {        flag = false;    }};
+
+bool Singletondemo::flag = false;
+Singletondemo* Singletondemo::single = NULL;
+Singletondemo* Singletondemo::getInstance()
+{
+    if(! flag)
+    {
+        single = new Singletondemo();
+        flag = true;
+        return single;
+    }
+    else
+    {
+        return single;
+    }
+}
+void Singletondemo::method()
+{    cout << "Method of the Singletondemo class" << endl;}
+
+int main()
+{    Singletondemo *sc1,*sc2;
+    sc1 = Singletondemo::getInstance();
+    sc1->method();
+    sc2 = Singletondemo::getInstance();
+    sc2->method();
+    return 0;
+}

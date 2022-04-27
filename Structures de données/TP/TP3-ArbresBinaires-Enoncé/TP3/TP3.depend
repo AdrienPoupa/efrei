@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1446547920 source:c:\users\adrien\documents\efrei\structures de données\tp\tp3-arbresbinaires-enoncé\tp3\tp3util.cpp
+	<iostream>
+	<iomanip>
+	<sstream>
+	<string>
+	"tp3util.h"
+
+1414416426 c:\users\adrien\documents\efrei\structures de données\tp\tp3-arbresbinaires-enoncé\tp3\tp3util.h
+	<string>
+
+1446548517 source:c:\users\adrien\documents\efrei\structures de données\tp\tp3-arbresbinaires-enoncé\tp3\tp3.cpp
+	<iostream>
+	<sstream>
+	<string>
+	<stdio.h>
+	<string.h>
+	"tp3util.h"
+

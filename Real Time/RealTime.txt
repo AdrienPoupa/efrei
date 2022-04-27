@@ -1,0 +1,155 @@
+Md(tc+1) = (Td-(Tc+1))-(Ri-1)
+		 = Td - Tc - 1 - Ri + 1
+		 = (Td-Tc) - Ri
+? Inactive
+
+Md(tc+1) = (Td-(Tc+1))-Ri
+		 = Md(Tc) - 1
+		 
+A lasts	5 u.t, is ready to  0 deadline 9
+B		3					3		   8
+C		2					2		   11
+D		2					7		   12
+
+ABCD possible
+
+			T1		T2		T3		T4		T5
+Period		30		30		60		60		120
+Duration	10		8		6		10		4
+
+LCM (PPCM) ? = 120
+Correct schedule 5 tasks on one processor?
+
+T1 T2 T3 T4 T1 T2 T5 T5 P T1 T2 T3 T4 T1 T2 P
+
+			T1		T2
+Period		4		8 (réexécuter toutes les X secondes)
+Duration	1		4
+
+W? U(2) = 0.83
+
+Schedule with Rate Monotonic
+P(T1) = 1/4 priority
+P(T2) = 1/8
+T1 > T2
+
+T1, T2
+
+			T1		T2		T3
+Period		2		3		6
+Duration	1		1		1
+
+W = 1/2 + 1/3 + 1/6 = 1
+
+1>W>0.78
+
+Correct schedule?
+
+			T1		T2		T3
+Period		20		5		10
+Duration	1		2		4
+Deadline	8		4		10
+
+D <= T1
+
+W = 1/20 + 2/5 + 4/10 = 0.85
+
+__EDF: Earliest Deadline First__
+
+	C1		D1		P1
+T1	1		8		20
+T2	2		4		5
+T3	4		10		10
+
+C = durée d'exécution
+D = échéance
+P = période
+
+On s'arrête à chaque fin de période
+
+At t=0, T2>T1>T3
+
+LCM (périodes) = 20
+
+W = 1/20 + 2/5 + 4/10 = 17/20
+
+Process: time taken + time before = total
+T2: 2 = 2
+T1: 1 + 2 = 3
+T3: 2 + 3 = 5
+T2: 2 + 5 = 7
+T3: 2 + 7 = 9
+P(ause): 1 + 9 = 10 (tout a déjà été fait, on attend une nouvelle période)
+T2: 2 + 10 = 12
+T3: 3 + 12 = 15
+T2: 2 + 15 = 17
+T3: 1 + 17 = 18
+P(ause): 2 + 18 = 20
+
+__LLF: Least Laxity First__
+
+	C1		D1		P1
+T1	3		7		20
+T2	2		4		5
+T3	1		8		10
+
+Ri <= Ci
+At t=0, Ri=Ci
+
+Md = (Td-Tc) - Ri
+Td -> deadline
+Tc -> current time
+Ri -> Ci
+Ri: durée restante tâche
+
+1) Interval of analysis
+LCM(P1) = 20
+
+2) Workload
+W = 3/20 + 2/5 + 1/10 + 13/10 < 1
+
+3) Schedule
+Md(T1)t=0 = (7-0)-3 = 4
+Md(T2)t=0 = (4-0)-2 = 2
+Md(T3)t=0 = (8-0)-1 = 7
+
+On calcule la laxité a chaque periode
+
+T2: 2 = 2
+T1: 3 + 2 = 5 (on s'arrête, plus petite période)
+
+T2: on l'a exécuté donc on change de fenêtre (deadline change)
+Md(T2)t=5 = (9-5)-2 = 2
+Md(T3)t=5 = (8-5)-1 = 2
+
+On choisit arbitrairement entre les deux 2
+
+T3: 1 + 5 = 6
+T2: 2 + 6 = 8
+Pause jusque 10
+
+14 = 5 + 5 + 4
+5 + 5 = 2 périodes, 4 = deadline
+Md(T2)t=10 = (14-10)-2 = 2
+Md(T3)t=10 = (18-10)-1 = 7
+18 = 10 + 8
+10 = 1 période, 8 = deadline
+
+T2: 2 + 10 = 12
+T3: 1 + 12 = 13
+Pause jusque 15
+T2: 15 + 2 = 17
+
+
+
+A start time 4, deadline 8, CA = 3
+A start time 3, deadline 8, CA = 3
+A start time 1, deadline 8, CA = 4
+
+A > B > C
+
+C takes M1 at time 2
+C releases M1 after 2 units of time
+A takes M1 at time 2
+A releases M1 after 1 unit of time
+

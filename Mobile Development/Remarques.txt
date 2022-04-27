@@ -1,0 +1,23 @@
+- Coté serveur
+
+  - récupérer des données en html
+
+  - parser et stocker en BDD
+
+  - web service en php
+
+- Probleme: récupération du département en fonction de la lat/long
+
+- Ecran: affichage des taux de pollen
+
+- Taux: transformer avec le script php => valeurs
+
+- Affichage des taux: composants graphiques pour afficher des taux ?
+
+- Alerte via un service: notification de seuil
+
+- Affichage en liste de quelque chose: 
+
+  - départements
+
+- Traitement de deux départements ??? pex département "1314" = union de 13 et 14

@@ -1,0 +1,45 @@
+Live: toutes les transitions sont atteignables tout le temps
+O ->  _
+  <- |_|
+  t1
+Quasi-Live: toutes les transitions sont fired au moins une fois
+Weakly-Live (deadlock free): if there are no reachable dead markings
+(A marking m is dead if there is no transition which is enabled in m)
+En gros: on veut une transition pour chaque marking.
+Marking: ensemble (x,y,z) dans reachability
+On n'atteint pas un état dans lequel on reste bloqué
+
+Borné: nombre de token fixe (pas de w)
+
+Slide 56:
+	AVANT la transition: ce dont on a besoin
+	APRES la transition: ce que ça donne
+	p1 est borné contrairement à la slide 74 car donne autant qu'il reçoit
+	
+Slide 62.1:
+mx = ce qui est activé
+
+Transition (carré) ~ usine, crée ou détruit des tokens à la demande
+Slide 68: t1 crée un nouveau token non stop à chaque retour de t1 sur p1
+Opération atomique, pas de décomposition. On fait directement p1->t1->p2->t1->p1
+p1 borné à 1 => p2 pas borné
+
+Slide 74: t2 demande p1 ET p2
+
+Reachability: quand borné (pas w)
+Coverability: quand pas borné (un ou plusieurs w)
+
+On ne fait qu'une transaction à la fois.
+
+w ne peut qu'augmenter
+
+G "always in the future"
+X "next"
+U "p true until q true"
+F "eventually in the future"
+∧ et
+¬ non
+. ou
+
+GFp: il y aura toujours un p dans le futur
+FGp: que des p à la fin

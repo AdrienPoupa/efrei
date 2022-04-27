@@ -1,0 +1,90 @@
+Exo1
+TP2 écrire les 3 versions suivantes pour le tableau de livres 
+1) Livre babel[n];
+    tableau statique de livres
+    les livres sont déjà alloués statiquement donc construits par défaut
+
+2) Livre * babel = new Livre[n]; 
+    tableau dynamique de livres
+    les livres sont déjà alloués statiquement donc construits par défaut
+    
+3) Livre * babel[n]; 
+    tableau de pointeurs de livres. 
+    les livres doivent être alloués dynamiquement (construits)
+    
+    
+
+______________________________________________________________________
+Exo2 La classe Vector3 du support de cours
+
+Explications page 44 classe Vector3
+	x = y
+	x en Write lvalue
+	y en Read rvalue
+
+	tab[i] = 4; // C en W pour tab[i]
+	d = tab[i]; // C en R  pour tab[i]
+
+	v._coeff[1] NON interdit private
+
+	v.coeff(1) = 17; // _coeff[1] vaut 17, méthode (1)
+	d = v.coeff(1) ; // d vaut 17 , méthode (2)
+
+	PLUS TARD grâce à la surcharge de l'opérateur []
+	on pourra écrire naturellement comme en maths
+	v[1] = 17;
+	d = v[1];
+
+La classe Vector3 doit contenir les fonctions suivantes :
+1) initVector comme en C
+2) init comme en C++
+3) constructeurs Vector comme en C++
+	1) avec des valeurs par défaut 0 0 0
+	dans le .h 
+		Vector3(double x = 0, double y = 0, double z = 0);
+	dans le .cpp 
+		Vector3::Vector3(double x, double y, double z)
+		{
+			_coeff[0] = x;
+			...
+		}
+	
+	utilisation :
+		Vector3 v1 = Vector3(5,7,8);
+		Vector3 v2 = Vector3(5);
+		Vector3 v3 = Vector3();
+		Vector3 v4;
+
+		Vector3 v1bis (5,7,8); // OK
+		Vector3 v2bis (5); // OK
+
+		Vector3 v3bis (); // BUG v3bis est une fonction
+
+		Vector3 f()
+		{
+			Vector3 res = Vector3();
+			// OU Vector3 res; 
+
+			res.print();
+			// retour d'une copie grâce au constructeur de copie
+			return res; // return Vector3(res);
+		}
+
+
+
+
+	
+	2) de copie
+	Vector3::Vector3(const Vector3 & v)
+	
+	utilisation :
+		Vector3 v1 = Vector(5,7); // (5 7 0) ou Vector3 v1(5,7); 
+		Vector3 v2 = Vector(v1);  
+4) saisie
+5) print
+6) product avec référence en retour HOMOTHETIE
+7) produit scalaire de 2 vecteurs
+8) produit vectoriel de 2 vecteurs
+
+
+
